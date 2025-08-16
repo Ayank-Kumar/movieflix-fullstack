@@ -98,3 +98,43 @@ npm start
 ```bash
 http://localhost:3000
 ```
+
+## Example Environment Files
+
+### Backend (`application.yml`)
+```yaml
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/movieflix
+
+movieflix:
+  tmdb:
+    api-key: your_tmdb_api_key
+    base-url: https://api.themoviedb.org/3
+
+jwt:
+  secret: your_jwt_secret
+  expiration-ms: 3600000
+```
+
+### Frontend (`.env`)
+```text
+REACT_APP_API_BASE_URL=http://localhost:8080/api
+REACT_APP_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
+```
+
+## Getting Started
+
+1. Ensure **MongoDB** is running (local or Atlas).  
+2. Start the **backend** (on port `8080`).  
+3. Start the **frontend** (on port `3000`).  
+4. Open [http://localhost:3000](http://localhost:3000) to use **MovieFlix**.  
+
+---
+
+## Notes
+
+- Requires a valid **TMDB API key** for data fetching.  
+- **JWT secret** should be strong and kept private.  
+- For production, configure environment variables via your hosting platform’s settings.  
