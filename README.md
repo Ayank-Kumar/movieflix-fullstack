@@ -38,3 +38,63 @@ Follow these steps to get your development environment running.
 ```bash
 git clone https://github.com/Ayank-Kumar/movieflix-fullstack.git
 cd movieflix-fullstack
+```
+
+## 2) Backend Configuration
+
+Edit `backend/src/main/resources/application.yml` with your environment values:
+
+```yaml
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/movieflix
+
+movieflix:
+  tmdb:
+    api-key: YOUR_TMDB_API_KEY
+    base-url: https://api.themoviedb.org/3
+
+jwt:
+  secret: YOUR_JWT_SECRET
+  expiration-ms: 3600000
+```
+
+### Build and run the backend
+
+```bash
+cd backend
+./mvnw clean package
+java -jar target/movieflix-backend.jar
+```
+
+### The backend runs at
+
+```bash
+http://localhost:8080/api
+```
+
+## 3) Frontend Configuration
+
+### Create your environment file from the example:
+```bash
+cd ../frontend
+cp .env.example .env
+```
+
+### Edit `frontend/.env`
+```text
+REACT_APP_API_BASE_URL=http://localhost:8080/api
+REACT_APP_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
+```
+### Install dependencies and start the development server
+```bash
+npm install
+npm start
+```
+
+###  The frontend runs at:
+
+```bash
+http://localhost:3000
+```
