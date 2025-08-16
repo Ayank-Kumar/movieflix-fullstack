@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: movieflix-backend
+
+  data:
+    mongodb:
+      uri: mongodb+srv://Cluster88480:MwJlPMyDOzAklwAS@cluster88480.o5axi8d.mongodb.net/movieflix?retryWrites=true&w=majority
+
+movieflix:
+  tmdb:
+    api-key: ${TMDB_API_KEY:207f624e624778646217ca2ce13b1e0e}
+    base-url: https://api.themoviedb.org/3
+
+  jwt:
+    secret: ${JWT_SECRET:6zfsnJt+iRalziDcWorZzHzjG9LhdfaMqQrPuOb3Bbg=}
+    expiration: 86400000 # 24 hours
+
+  cache:
+    expiry-hours: 24
+
+logging:
+  level:
+    com.movieflix: DEBUG
+    org.springframework.data.mongodb: DEBUG
