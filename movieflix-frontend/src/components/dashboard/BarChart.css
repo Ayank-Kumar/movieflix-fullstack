@@ -1,0 +1,23 @@
+.chart-container {
+  height: 100%;
+}
+
+.chart-container h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.chart-wrapper {
+  height: 350px;
+  position: relative;
+}
+
+.chart-loading, .chart-no-data {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
